@@ -1,0 +1,142 @@
+#include<iostream>
+using namespace std;
+
+class Vehicle
+{
+	int Reg_Num;
+	char Model[20];
+	float cubic;
+		public:
+		Vehicle()
+		{
+			cout<<"Enter Registration Number: "<<endl;
+			cin>>Reg_Num;
+			cout<<"Enter Vehicle Model: "<<endl;
+			cin>>Model;
+			cout<<"Enter cc: "<<endl;
+			cin>>cubic;
+		}
+		void display()
+		{
+			cout<<"Vehicle Registration Number: "<<Reg_Num<<endl;
+			cout<<"Vehicle Model: "<<Model<<endl;
+			cout<<"Vehicle Cubic Centimetre: "<<cubic<<endl;
+		}
+		int Tax()
+		{
+			float tax;
+			if (cubic>1200)
+			{
+				 tax=cubic *10;
+				 cout<<"Tax Payable: "<<tax<<endl;
+			}
+			else
+			{
+				tax = 10000;
+				cout<<"Tax Payable: "<<tax<<endl;
+			}
+		}
+		~Vehicle()
+		{
+			cout<<"Destructor called"<<endl;
+		}
+};
+int main()
+{
+	Vehicle v;
+	v.display();
+	v.Tax();
+	return 0;
+}
+*******************************************************************************************
+#include<iostream>
+using namespace std;
+
+class Accounts
+{
+	string Acc_Name;
+	int Acc_Num;
+	float Acc_balance;
+		public:
+		Accounts()
+		{
+			Acc_Name = "Equity";
+			Acc_Num = 345;
+			Acc_balance = 5500;
+					
+		}
+		Accounts(string iAcc_Name, int iAcc_Num, float iAcc_balance)
+		{
+			cout<<"**********************************************"<<endl;
+			Acc_Name = iAcc_Name;
+			Acc_Num = iAcc_Num;
+			Acc_balance = iAcc_balance;
+				
+		}
+	void display()
+	{
+		cout<<"Account Name: "<<Acc_Name<<endl;
+		cout<<"Account Number: "<<Acc_Num<<endl;
+		cout<<"Account Balance: "<<Acc_balance<<endl;
+	}
+		~Accounts()
+		{
+			cout<<"***********************************************"<<endl;
+			cout<<"Destructor called"<<endl;
+		}
+};
+int main()
+{
+	Accounts a;
+	a.display();
+	
+	Accounts b("Equity", 345, 5500);
+	b.display();
+	return 0;
+}
+****************************************************************************************
+#include<iostream>
+using namespace std;
+
+class Invoice
+{
+	int inumber;
+	string purchase;
+	float iamount;
+	public:
+		Invoice()
+		{
+			inumber = 980;
+			purchase = "June";
+			iamount = 150000;
+								
+		}
+		Invoice(int inum, string iparchase, float iamnt)
+		{
+			cout<<"**********************************************"<<endl;
+			inumber = inum;
+			purchase = iparchase;
+			iamount = iamnt;
+				
+		}
+	void display()
+	{
+		cout<<"Invoice Number: "<<inumber<<endl;
+		cout<<"Mounth of Purchase: "<<purchase<<endl;
+		cout<<"Invoice Amount: "<<iamount<<endl;
+	}
+		~Invoice()
+		{
+			cout<<"***********************************************"<<endl;
+			cout<<"Destructor called"<<endl;
+		}
+};
+int main()
+{
+	Invoice i;
+	i.display();
+	
+	Invoice b(980, "June", 150000);
+	b.display();
+	return 0;
+}
